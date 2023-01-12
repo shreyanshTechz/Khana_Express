@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const ProjectList = ({projects}) =>{
   
   return (
-    <div className="project-list section">
+    <div className="project-list row section">
       {projects && projects.map(project =>{
-          return(<Link to={
+          return(<div className='col'><Link to={
             
             {pathname:'details/'+project.id,
               state : {
@@ -14,7 +14,7 @@ const ProjectList = ({projects}) =>{
               }
           
             }}>
-            <ProjectSummary project={project}/></Link>
+            <ProjectSummary project={project}/></Link></div>
           )
       })}
     </div>

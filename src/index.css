@@ -18,7 +18,7 @@ code {
 }
 .greeny{
   /* From https://css.glass */
-background: rgba(221, 233, 210, 0);
+background: rgb(0, 0, 0);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(7.6px);

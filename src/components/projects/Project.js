@@ -7,7 +7,7 @@ import {useParams} from 'react-router-dom'
 function ProjectDetails(props) {
   let { id } = useParams();
   console.log(id);
-  const project = {tiltle:'Hey',content:'jj'};
+  const project = {tiltle:"d",content:'jj'};
   if(project){
   return (
     <div>
@@ -15,7 +15,7 @@ function ProjectDetails(props) {
         <div className="card z-depth-0">
         <div className="card-content">
             <div className="card-title">{project.title}</div>
-                <p>{project.content}</p>
+                {/* <p>{project.content}</p> */}
                 </div>
             
             <div className="card-action gret lighen-4 grey-text">
