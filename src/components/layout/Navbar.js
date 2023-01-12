@@ -11,7 +11,7 @@ const Navbar = (props)=> {
     const links = auth.uid?<SignedLinks/>:<SignedOutLinks/>
     return (
       <div>
-        <nav className="nav-wrapper light-green darken-3">
+        <nav className= "nav-wrapper brown darken-4">
             <div className="container">
                 <Link to='/' className='brand-logo left'>Khana Express </Link>
                 {links}
