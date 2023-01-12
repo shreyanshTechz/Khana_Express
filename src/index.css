@@ -11,10 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.App{
-  background: url('https://i0.wp.com/techbeasts.com/wp-content/uploads/2016/01/nature-wallpapers-hd.jpg') no-repeat;
+body{
+  background: url('https://pixabay.com/get/gc876c75bb6921eca8ef37e099b9129911b9c6be8ff9971d0cc569e03ad875e9805730585a7b5910fb6e567154aede41b.jpg') no-repeat;
+  background-attachment:fixed;
   background-size: 100%;
-  background-repeat: no-repeat;
+ 
 }
 .greeny{
   /* From https://css.glass */
