@@ -49,10 +49,10 @@ export default function BasicGrid() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <div>
+                {/* <div>
                   <LocalMallSharpIcon />
                   <FavoriteBorderIcon style={{ marginLeft: 250 }} />
-                </div>
+                </div> */}
               </CardActions>
             </Card>
           </Item>
@@ -76,10 +76,10 @@ export default function BasicGrid() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <div>
+                {/* <div>
                   <LocalMallSharpIcon />
                   <FavoriteBorderIcon style={{ marginLeft: 250 }} />
-                </div>
+                </div> */}
               </CardActions>
             </Card>
           </Item>
@@ -105,10 +105,10 @@ export default function BasicGrid() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <div>
+                {/* <div>
                   <LocalMallSharpIcon />
                   <FavoriteBorderIcon style={{ marginLeft: 250 }} />
-                </div>
+                </div> */}
               </CardActions>
             </Card>
           </Item>
