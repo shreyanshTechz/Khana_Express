@@ -1,5 +1,5 @@
 import React from 'react'
-import '@splidejs/splide/css';
+// import '@splidejs/splide/css';
 
 export default function Items(item) {
     item = item.item;
