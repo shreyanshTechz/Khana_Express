@@ -9,11 +9,13 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import burger from "../picture/burger.jpg"
-import pizza from "../picture/pizza.jpg"
-import icecream from "../picture/icecream.jpg"
-// import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import burger from "../picture/burger.jpg";
+import pizza from "../picture/pizza.jpg";
+import icecream from "../picture/icecream.jpg";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 // import burger from "../picture/burger.jpg"
+import LocalMallSharpIcon from "@mui/icons-material/LocalMallSharp";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -25,7 +27,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BasicGrid() {
   return (
-    <Box sx={{ flexGrow: 3}}>
+    <Box sx={{ flexGrow: 3 }}>
       <Grid container spacing={3}>
         <Grid item xs={4}>
           <Item>
@@ -41,20 +43,23 @@ export default function BasicGrid() {
                   Pizza
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                 An Italian dish consisting of a flat round bread base with
-                vegetables, cheese, meat, etc. on top, which is cooked in an oven
+                  An Italian dish consisting of a flat round bread base with
+                  vegetables, cheese, meat, etc. on top, which is cooked in an
+                  oven
                 </Typography>
               </CardContent>
               <CardActions>
-                {/* <Button >{ShoppingBasketIcon}</Button>
-                <Button size="small">Learn More</Button> */}
+                <div>
+                  <LocalMallSharpIcon />
+                  <FavoriteBorderIcon style={{ marginLeft: 250 }} />
+                </div>
               </CardActions>
             </Card>
           </Item>
         </Grid>
         <Grid item xs={4}>
           <Item>
-          <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 alt="green iguana"
@@ -66,21 +71,23 @@ export default function BasicGrid() {
                   Ice Cream
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                 Ice cream is a sweetened frozen food typically eaten as a snack or dessert.
-                  It may be made from milk or cream.
+                  Ice cream is a sweetened frozen food typically eaten as a
+                  snack or dessert. It may be made from milk or cream.
                 </Typography>
               </CardContent>
               <CardActions>
-                {/* <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button> */}
+                <div>
+                  <LocalMallSharpIcon />
+                  <FavoriteBorderIcon style={{ marginLeft: 250 }} />
+                </div>
               </CardActions>
             </Card>
           </Item>
           {/* </Item> */}
         </Grid>
         <Grid item xs={4}>
-        <Item>
-          <Card sx={{ maxWidth: 345 }}>
+          <Item>
+            <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 alt="green iguana"
@@ -92,13 +99,16 @@ export default function BasicGrid() {
                   Burger
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                 Meat or vegetables cut into very small pieces and made into a flat round-shaped
-                  cutlet, that you eat between two pieces of bread
+                  Meat or vegetables cut into very small pieces and made into a
+                  flat round-shaped cutlet, that you eat between two pieces of
+                  bread
                 </Typography>
               </CardContent>
               <CardActions>
-                {/* <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button> */}
+                <div>
+                  <LocalMallSharpIcon />
+                  <FavoriteBorderIcon style={{ marginLeft: 250 }} />
+                </div>
               </CardActions>
             </Card>
           </Item>
