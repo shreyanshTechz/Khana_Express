@@ -42,8 +42,9 @@ export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
+      <Navbar />
         <div className="App">
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             {/* <Route exact path='/' element={<Dashboard />} /> */}
             <Route path='/project/:id' element={<ProjectDetails />} />

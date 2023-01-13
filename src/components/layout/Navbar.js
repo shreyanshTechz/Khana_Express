@@ -7,8 +7,8 @@ const Navbar = (props)=> {
 
   
     const {auth} = props;
-    console.log(auth);
-    const links = auth.uid?<SignedLinks/>:<SignedOutLinks/>
+    console.log(auth.email);
+    const links = auth.uid?<SignedLinks email={auth.email}/>:<SignedOutLinks/>
     return (
       <div>
         <nav className= "nav-wrapper brown darken-4">
