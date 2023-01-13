@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Items from '../layout/Items';
-
+import ImgMediaCard from '../projects/SlideFront'
 function Api(props) {
     console.log(props);
 	const [loading, setLoading] = useState(false);
@@ -43,6 +43,7 @@ function Api(props) {
 	}, []);
 	return (
 		<>
+        
 			<div className="sm6 row">
                 <h1 style={{color:"white"}}>{props.item}</h1>
 				{loading ? (

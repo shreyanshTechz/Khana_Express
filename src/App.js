@@ -45,11 +45,11 @@ export default class App extends Component {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route exact path='/' element={<Dashboard />} />
+            {/* <Route exact path='/' element={<Dashboard />} /> */}
             <Route path='/project/:id' element={<ProjectDetails />} />
             <Route path='/Signin' element={<SignIN />} />
             <Route path='/Signup' element={<SignUp />} />
-            <Route path='/api' element={<FrontDash item={['chocolate','fruits','cake','biscuits','milk','butter','oil','namkeen','syrup']}/>} />
+            <Route path='/' element={<FrontDash item={['pizza','burger','chocolate','fruits','cake','biscuits','milk','butter','oil','namkeen','syrup']}/>} />
             <Route path='/details' element={<Project />} />
             <Route path='/create' element={<CreateProject />} />
             {/* <Route path='/google' element={<Google/>}/> */}
