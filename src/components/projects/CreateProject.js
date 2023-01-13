@@ -48,13 +48,9 @@ const mapStateToprops = (state)=>{
     }
 }
 
-
-
-
 const mapDispatchToprops = (dispatch) =>{
     return{
         createProject:(project) =>dispatch(createProject(project))
     }
 }
-
 export default connect(mapStateToprops,mapDispatchToprops)(CreateProject)

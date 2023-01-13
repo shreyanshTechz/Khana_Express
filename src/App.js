@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SignIN from './components/auth/SignIN'
 import SignUp from './components/auth/SignUp'
 import Dashboard from './components/dashboard/Dashboard'
@@ -8,20 +8,51 @@ import SignedLinks from './components/layout/SignedLinks'
 import ProjectDetails from './components/projects/ProjectDetails'
 import CreateProject from './components/projects/CreateProject'
 import Project from './components/projects/Project'
+import Api from './components/Apidata/Api'
+import axios from 'axios';
+import FrontDash from './components/Apidata/FrontDash'
+// import Google from './components/auth/Google'
 export default class App extends Component {
+  
+  // async getUsers() {
+  //   const options = {
+  //     method: 'GET',
+  //     url: 'https://edamam-food-and-grocery-database.p.rapidapi.com/parser',
+  //     params: {ingr: 'apple'},
+  //     headers: {
+  //       'X-RapidAPI-Key': '7914dc87e2msh63c6ef9c498e562p12e7afjsn53bb0e865ab4',
+  //       'X-RapidAPI-Host': 'edamam-food-and-grocery-database.p.rapidapi.com'
+  //     }
+  //   };
+    
+  //       try {
+  //       const res = await axios.get(options);
+  //       this.setState({
+  //       users: res.data,
+  //       isLoading: false,
+  //   })
+  //   } catch(err) {
+  //       this.setState({
+  //       err,
+  //       isLoading: false
+  //   })
+  //   }
+  //   console.log(this.users);
+  //   }
   render() {
     return (
       <BrowserRouter>
         <div className="App">
           <Navbar />
           <Routes>
-            <Route exact path='/' element={<Dashboard/>}/>
-            <Route path='/project/:id' element={<ProjectDetails/>}/>
-            <Route path='/Signin' element={<SignIN/>}/>
-            <Route path='/Signup' element={<SignUp/>}/>
-            <Route path='/Signup' element={<try/>}/>
-            <Route path='/details' element={<Project/>}/>
-            <Route path='/create' element={<CreateProject/>}/>
+            <Route exact path='/' element={<Dashboard />} />
+            <Route path='/project/:id' element={<ProjectDetails />} />
+            <Route path='/Signin' element={<SignIN />} />
+            <Route path='/Signup' element={<SignUp />} />
+            <Route path='/api' element={<FrontDash item={['chocolate','fruits','cake','biscuits','milk','butter','oil','namkeen','syrup']}/>} />
+            <Route path='/details' element={<Project />} />
+            <Route path='/create' element={<CreateProject />} />
+            {/* <Route path='/google' element={<Google/>}/> */}
           </Routes>
         </div>
       </BrowserRouter>

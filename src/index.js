@@ -14,6 +14,15 @@ import fbConfig from './reducers/fbconfig/fbConfig'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { useState } from "react";
+const axios = require('axios').default;
+
+
+
+
+
+
+
 const store = createStore(
   rootReducer,
   compose(
@@ -22,13 +31,22 @@ const store = createStore(
   )
 );
 
+
+
+
+
 const rrfProps = {
   firebase,
   config: fbConfig,
   dispatch: store.dispatch,
   createFirestoreInstance
 };
-  
+ 
+
+
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

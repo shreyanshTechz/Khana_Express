@@ -7,8 +7,8 @@ class SignedLinks extends Component {
     return (
       <div>
         <ul className="right">
-            <li><NavLink to='/create'>New Project</NavLink></li>
-            <li><a  onClick={this.props.signOut}>Log Out</a></li>
+            <li><NavLink to='/create'><img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/null/external-shopping-cart-interface-kiranshastry-gradient-kiranshastry.png"/></NavLink></li>
+            <li><a  onClick={this.props.signOut}><img src="https://img.icons8.com/fluency/48/null/exit.png"/></a></li>
             {/* <li><NavLink to='/'></NavLink></li> */}
             <li><NavLink to='/' className='btn btn-floating pink lighten-1'>NN</NavLink></li>
         </ul>

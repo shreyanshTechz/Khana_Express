@@ -56,6 +56,7 @@ export class SignUp extends Component {
     )
   }
 }
+
 const mapStateToprops=(state)=>{
     return{
         
