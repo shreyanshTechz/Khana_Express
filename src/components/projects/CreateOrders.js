@@ -4,28 +4,18 @@ import { connect, Connect } from 'react-redux'
 import { orderProject } from '../../action/orderAction'
 import { Navigate } from 'react-router-dom'
 export class CreateProject extends Component {
-    
-    // state = {
-    //     name:'frsf',phone:'sdfsdf',address:'sdfsd',email:'sdfsd',amount:'dfssd',
-    // }
     handleClick = (e) =>{
         e.preventDefault();
         const object = {email:this.props.auth.email};
         this.props.item.user = object;
-        // console.log(object);
+        console.log(this.props.item.food.nutrients.CHOCDF);
+        var price  = JSON.stringify(this.props.item.food.nutrients.CHOCDF).split('.')[0];
+        alert(this.props.item.food.label +  " added to Cart");
+        const curr_amt =Number(document.getElementById('amount').innerHTML.split('₹')[1]) + Number(price);
+        console.log(curr_amt);
+        document.getElementById('amount').innerHTML = "Amount : ₹" + curr_amt;
         this.props.orderProject(this.props.item);
     }
-    updateData = (e) => {
-        e.preventDefault();
-        // db.collection("customersData").doc(dataIdToBeUpdated).update({
-        //   name: updatedCustomerName,
-        //   password: updatedCustomerPassword,
-        // });
-      
-        // setUpdatedCustomerPassword("");
-        // setUpdatedCustomerName("");
-        // setDataIdToBeUpdated("");
-      };
   render() {
     
     const {auth} = this.props;
@@ -33,7 +23,7 @@ export class CreateProject extends Component {
     // const {project} = this.props;
     const item = this.props.item;
     var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
-    console.log(this.props);
+    // console.log(this.props);
     return (
         <div>
         <div class="col s2">
@@ -41,17 +31,14 @@ export class CreateProject extends Component {
                             <div class="card-image">
                               <img src={item.food.image}/>
                               {/* <span class="card-title" style={{fontWeight:"800"}}>{item.food.label}</span> */}
-                              <a class="btn-floating halfway-fab waves-effect waves-light red" onClick={this.handleClick}><i class="material-icons">add</i></a>
+                              <a  class=" add btn-floating halfway-fab waves-effect waves-light red" onClick={this.handleClick}><i class="material-icons">add</i></a>
                             </div>
                             <div class="card-content">
                               <p style={{fontWeight:"800"}}>{item.food.label}</p>
-                              <span>Amount : {price}</span>
+                              <span>Amount : ₹ {price}</span>
                             </div>
                           </div>
                         </div>
-                        {/* <figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d">1</div></figure> */}
-	
-                  
     </div>
     )
   }

@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import SignedLinks from './SignedLinks'
+import {compose} from 'redux'
+// import { connect } from 'react-redux'
 import { connect, Connect } from 'react-redux'
 import SignedOutLinks from './SignedOutLinks'
+import { firestoreConnect } from 'react-redux-firebase'
 const Navbar = (props)=> {
-
-  
-    const {auth} = props;
-    console.log(auth.email);
-    const links = auth.uid?<SignedLinks email={auth.email}/>:<SignedOutLinks/>
+    const {auth,orders} = props;
+    console.log(orders);
+    const links = auth.uid?<SignedLinks email={auth}/>:<SignedOutLinks/>
     return (
       <div>
         <nav className= "nav-wrapper brown darken-4">
@@ -22,11 +23,11 @@ const Navbar = (props)=> {
   
 }
 const mapStateToprops = (state)=>{
-  // console.log(state);
   return{
-    
     auth:state.firebase.auth
   }
 }
-
-export default connect(mapStateToprops)(Navbar)
+export default compose(
+  connect(mapStateToprops),firestoreConnect([{collection:'Orders'}])
+)(Navbar)
+// export default connect(mapStateToprops)(Navbar)

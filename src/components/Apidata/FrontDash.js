@@ -24,4 +24,5 @@ function FrontDash(props) {
 	);
 }
 
+
 export default FrontDash;

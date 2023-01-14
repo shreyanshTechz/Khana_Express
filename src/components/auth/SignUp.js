@@ -5,7 +5,7 @@ import { signUp } from '../../action/authSctions'
 import { connect } from 'react-redux'
 export class SignUp extends Component {
     state = {
-        email:'',password:'',firstName:'',address:'',amount:'',userid:'',lastname:'',displayName:'fuck'
+        email:'',password:'',firstName:'',address:'',amount:'',userid:'',lastname:'',phone:''
 
     }
     // state = {
@@ -49,6 +49,14 @@ export class SignUp extends Component {
             <div className="input-fields">
                 <label htmlFor="lastName">lastName</label>
                 <input type="text" id='lastName' onChange={this.handleChange} />
+            </div>
+            <div className="input-fields">
+                <label htmlFor="address">Address</label>
+                <input type="text" id='address' onChange={this.handleChange} />
+            </div>
+            <div className="input-fields">
+                <label htmlFor="phone">phone</label>
+                <input type="text" id='phone' onChange={this.handleChange} />
             </div>
             <div className="input-field">
                 <button className="pink btn lighten-1 z-depth-0">Register</button>

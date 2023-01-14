@@ -6,7 +6,7 @@ const ProjectList = ({projects}) =>{
   return (
     <div className="project-list row section">
       {projects && projects.map(project =>{
-          return(<div className='col'>
+          return(<div className='col '>
             {/* <Link to={
             
             {pathname:'details/'+project[0].id,

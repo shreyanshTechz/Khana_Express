@@ -5,9 +5,24 @@ import projectReducer from '../../reducers/projectReducer'
 // import {useLocation} from 'react-router-dom';
 
 export default class ProjectList extends Component {
+
+  handleClick = (e)=>{
+    e.preventDefault();
+    console.log(this.props.project.food.foodId);
+    document.getElementById(this.props.project.food.foodId).innerHTML = 1 + Number(document.getElementById(this.props.project.food.foodId).innerHTML)
+  }
+  handleClickU = (e)=>{
+    e.preventDefault();
+    // console.log(document.getElementById(this.props.project.food.foodId).display);
+    document.getElementById(this.props.project.food.label).style.display='none';
+    console.log(this.props.project.food.foodId);
+    document.getElementById(this.props.project.food.foodId).innerHTML = Number(document.getElementById(this.props.project.food.foodId).innerHTML)-1
+  }
+  
   render() {
     
     const {project} = this.props;
+    
     // const d = project.createdAt.seconds;
     // const time = (new Date(project.createdAt.seconds * 1000)).toString();
     // console.log(time[date]);
@@ -17,17 +32,26 @@ export default class ProjectList extends Component {
      console.log(project);
     return (
       
-      <div>
-        <div className="project-list col-sm section">
-            <div className="card z-depth-0 project-summary">
-                <div className="card-content greeny white-text text-darken-3">
-                    <span className="card-title">{project.food.label}</span>
-                    <p>{project.content}</p>
-                    <p id="x" className="white-text">$ {price}</p>
-                </div>
-            </div>
-        </div>
-      </div>
+      
+        
+                          <div style={{margin:"20px"}} class="card" id={project.food.label}>
+                            <div style={{display:"flex",flexDirection:"column"}} class="card-image">
+                            <a  class=" add btn-floating hoverable waves-effect waves-light green" onClick={this.handleClickU}><i class="material-icons">remove</i></a>
+                              <img style={{position:"absolute",height:"20vh",width:"20vh"}} src={project.food.image}/>
+                              {/* <span class="card-title" style={{fontWeight:"800"}}>{item.food.label}</span> */}
+                              <a  class=" add btn-floating hoverable  waves-effect waves-light red" onClick={this.handleClick}><i class="material-icons">add</i></a>
+                              
+                              
+                            </div>
+                            <div style={{width:"20vh"}} class="card-content">
+                <br></br><br></br>
+                            <span id={project.food.foodId} style={{fontWeight:"800",alignSelf:"flex-end"}}>1</span>
+                              <p style={{fontWeight:"800"}}>{project.food.label}</p>
+                              <span>Amount : ₹ {price}</span>
+                            </div>
+                          </div>
+        
+      
     )
     
   }

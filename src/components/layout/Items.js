@@ -4,10 +4,13 @@ import React from 'react'
 import { orderProject } from '../../action/orderAction';
 export default function Items(item) {
     // console.log(item);
+    
     function create(item) {
         var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
         const pack = {Amount:price,Type:item.food.label}
-        orderProject(pack);
+        // alert("H")
+        
+        // orderProject(pack);
     }
     item = item.item;
     var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
@@ -26,7 +29,7 @@ export default function Items(item) {
                             </div>
                             <div class="card-content">
                               <p style={{fontWeight:"800"}}>{item.food.label}</p>
-                              <span>Amount : {price}</span>
+                              <span>Amount : ₹ {price}</span>
                             </div>
                           </div>
                         </div>
