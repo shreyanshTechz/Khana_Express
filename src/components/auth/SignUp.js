@@ -19,7 +19,6 @@ export class SignUp extends Component {
     handleSubmit = (e) =>{
         e.preventDefault();
         console.log(this.props);
-        this.props.createProject(this.state);
         this.props.signUp(this.state);
         
         return <Navigate to='/'/>

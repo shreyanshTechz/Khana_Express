@@ -4,21 +4,34 @@ import { connect, Connect } from 'react-redux'
 import { signOut } from '../../action/authSctions'
 import { stringify } from 'json5';
 class SignedLinks extends Component {
-  render() {
-    const {email} = this.props.email;
+  
 
-    const name = email[0] + email[1];
-    console.log(this.props);
+  render() {
+    // event.preventDefault()
+    // const uid = this.props.data.auth.uid;
+    // console.log(this.props);
+    // var person;
+    // for (let index = 0; index < this.props.data.people.length; index++) {
+    //   const element = this.props.data.people[index].item;
+    //   if(element===uid) person=this.props.data.people[index];
+    // }
+    const {data} = this.props;
+    const {people} = data;
+    // const user = data.people.filter(item => item.id===data.auth.uid)[0]
+    // const name = user.firstName[0] + user.firstName[1];
+    // console.log(auth);
+    const user = people.filter(item => item.id===data.auth.uid);
+    const name = user[0].firstName[0] + user[0].firstName[1];
     return (
       <div>
         <ul className="right">
-            <li id='amount'>Amount :  ₹ 0</li>
+            <li id='amount'>Amount :  ₹ {user.amount}</li>
             <li><NavLink to='/cart'><img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/null/external-shopping-cart-interface-kiranshastry-gradient-kiranshastry.png"/></NavLink></li>
-            <li><a  onClick={this.props.signOut}><img src="https://img.icons8.com/fluency/48/null/exit.png"/></a></li>
-            {/* <li><NavLink to='/'></NavLink></li> */}
+            <li><a  onClick={this.props.data.auth.signOut}><img src="https://img.icons8.com/fluency/48/null/exit.png"/></a></li>
+            <li><NavLink to='/'></NavLink></li>
             <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{name}</NavLink></li>
-            <li>{email}</li>
-        </ul>
+            <li>{user.firstName}</li>
+        </ul> 
       </div>
     )
   }
@@ -28,6 +41,5 @@ const mapDispatchToprops = (dispatch)=>{
     signOut:()=>dispatch(signOut())
   }
 }
-
 
 export default connect(null,mapDispatchToprops)(SignedLinks)

@@ -6,7 +6,8 @@ export const orderProject =(project)=>{
         firestore.collection('Orders').add({
             ...project,
             // createdAt : new Date()
-        }).then(()=>{
+        }).then((resp)=>{
+            console.log(resp);
             dispatch({type:'CREATE_PROJECT',
             Orders:project});     
             console.log("done")

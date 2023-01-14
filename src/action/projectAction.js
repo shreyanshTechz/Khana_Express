@@ -3,9 +3,11 @@ export const createProject =(project)=>{
     return(dispatch,getState,{getFirebase,getFirestore})=>{
 
         const firestore = getFirestore();
+        // firestore.collection('User').add
         firestore.collection('Users').add({
             ...project,
-            // createdAt : new Date()
+            createdAt : new Date(),
+            // userId: 
         }).then(()=>{
             dispatch({type:'CREATE_PROJECT',
             Users:project});     

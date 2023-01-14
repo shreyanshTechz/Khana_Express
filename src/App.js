@@ -11,9 +11,11 @@ import CreateProject from './components/projects/CreateProject'
 import Api from './components/Apidata/Api'
 import axios from 'axios';
 import FrontDash from './components/Apidata/FrontDash'
+
+// import { getDatabase } from "firebase/database";
 // import Google from './components/auth/Google'
 export default class App extends Component {
-  
+  // db = getDatabase();
   // async getUsers() {
   //   const options = {
   //     method: 'GET',
@@ -40,6 +42,7 @@ export default class App extends Component {
   //   console.log(this.users);
   //   }
   render() {
+    // console.log(this.props.db);
     return (
       <BrowserRouter>
       <Navbar />

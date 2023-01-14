@@ -7,9 +7,10 @@ import { connect, Connect } from 'react-redux'
 import SignedOutLinks from './SignedOutLinks'
 import { firestoreConnect } from 'react-redux-firebase'
 const Navbar = (props)=> {
-    const {auth,orders} = props;
-    console.log(orders);
-    const links = auth.uid?<SignedLinks email={auth}/>:<SignedOutLinks/>
+    const {auth,people} = props;
+    
+    console.log(people);
+    const links = auth.uid?<SignedLinks data={props}/>:<SignedOutLinks/>
     return (
       <div>
         <nav className= "nav-wrapper brown darken-4">
@@ -24,10 +25,11 @@ const Navbar = (props)=> {
 }
 const mapStateToprops = (state)=>{
   return{
+    people:state.firestore.ordered.myprofile,
     auth:state.firebase.auth
   }
 }
 export default compose(
-  connect(mapStateToprops),firestoreConnect([{collection:'Orders'}])
+  connect(mapStateToprops),firestoreConnect([{collection:'myprofile'}])
 )(Navbar)
 // export default connect(mapStateToprops)(Navbar)

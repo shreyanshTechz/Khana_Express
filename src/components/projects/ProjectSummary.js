@@ -3,13 +3,28 @@ import { Link, useLocation } from 'react-router-dom';
 import projectReducer from '../../reducers/projectReducer'
 // import ProjectDetails from './ProjectDetails';
 // import {useLocation} from 'react-router-dom';
-
+// import firebase from 'firebase/compat';
+import firebase from '../../reducers/fbconfig/fbConfig';
 export default class ProjectList extends Component {
 
   handleClick = (e)=>{
     e.preventDefault();
     console.log(this.props.project.food.foodId);
-    document.getElementById(this.props.project.food.foodId).innerHTML = 1 + Number(document.getElementById(this.props.project.food.foodId).innerHTML)
+    // document.getElementById(this.props.project.food.foodId).innerHTML = 1 + Number(document.getElementById(this.props.project.food.foodId).innerHTML)
+  
+      console.log(this.props);
+      // const object = {email:this.props.auth.email};
+      // this.props.item.user = object;
+      // console.log(this.props.item.food.nutrients.CHOCDF);
+      // var price  = JSON.stringify(this.props.item.food.nutrients.CHOCDF).split('.')[0];
+      // alert(this.props.item.food.label +  " added to Cart");
+      // const curr_amt =Number(document.getElementById('amount').innerHTML.split('₹')[1]) + Number(price);
+      // console.log(curr_amt);
+      // document.getElementById('amount').innerHTML = "Amount : ₹" + curr_amt;
+      // const db = firebase.firestore();
+      // const ids = this.props.auth.uid;
+      // db.collection("myprofile").doc(ids).update({amount: curr_amt});
+      // this.props.orderProject(this.props.item);
   }
   handleClickU = (e)=>{
     e.preventDefault();

@@ -22,6 +22,7 @@ export class SignIN extends Component {
         // return <Navigate to='/signUp'/>
     }
   render() {
+    console.log("djsvnfds");
     const {authError} = this.props;
     
     const {auth} = this.props;
