@@ -1,3 +1,5 @@
+import { display } from "@mui/system";
+
 export const signIn = (credentials)=>{
     return (dispatch,getState,{getFirebase})=>{
         const firebase = getFirebase();
@@ -36,7 +38,8 @@ export const signUp = (newUser)=>{
             return firestore.collection('users').doc(resp.user.uid).set({
                 firstName:newUser.firstname,
                 lastName:newUser.lastName,
-                initials:newUser.firstName[0]+newUser.lastName[0]
+                initials:newUser.firstName[0]+newUser.lastName[0],
+                displayName:newUser.displayName,
             })
         }).then(()=>{
             dispatch({type:'SIGNUP_SUCCESS'})

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { Navigate } from 'react-router-dom'
+import { createProject } from '../../action/projectAction'
 import { signUp } from '../../action/authSctions'
 import { connect } from 'react-redux'
 export class SignUp extends Component {
     state = {
-        email:'',password:'',firstName:'',lastName:''
+        email:'',password:'',firstName:'',address:'',amount:'',userid:'',lastname:'',displayName:'fuck'
+
     }
+    // state = {
+    //     email:'',password:'',firstName:'',lastname:''
+    // }
     handleChange = (e) =>{
         this.setState({
             [e.target.id] : e.target.value
@@ -13,12 +18,14 @@ export class SignUp extends Component {
     }
     handleSubmit = (e) =>{
         e.preventDefault();
-        // console.log(this.state);
-        this.props.signUp(this.state)
+        console.log(this.props);
+        this.props.createProject(this.state);
+        this.props.signUp(this.state);
+        
         return <Navigate to='/'/>
     }
   render() {
-    
+    console.log(this.props);
     const {auth,authError} = this.props;
     if(auth.uid) return <Navigate to='/'/>
     return (
@@ -67,7 +74,8 @@ const mapStateToprops=(state)=>{
 
 const mapDispatchToprops=(dispatch)=>{
     return{
-        signUp:(newUser)=>dispatch(signUp(newUser))
+        signUp:(newUser)=>dispatch(signUp(newUser)),
+        createProject:(Orders) =>dispatch(createProject(Orders))
     }
 }
 export default connect(mapStateToprops,mapDispatchToprops)(SignUp)

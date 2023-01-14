@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Items from '../layout/Items';
 import ImgMediaCard from '../projects/SlideFront'
+import CreateOrders from '../projects/CreateOrders';
 // import Itemz from '../layout/Itemz'
 function Api(props) {
     // console.log(props);
@@ -33,7 +34,7 @@ function Api(props) {
 
 			// After fetching data stored it in posts state.
 			setPosts(response.data.hints);
-            console.log(response.data.hints);
+            // console.log(response.data.hints);
 
 			// Closed the loading page
 			setLoading(false);
@@ -50,7 +51,7 @@ function Api(props) {
 				{loading ? (
 					<h4>Loading...</h4>) :(
 					(posts.map((item) =>
-                        (<Items item={item}/>)
+                        (<CreateOrders item={item}/>)
                         )
 					))
 				}

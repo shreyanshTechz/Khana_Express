@@ -6,16 +6,12 @@ export default function Items(item) {
     // console.log(item);
     function create(item) {
         var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
-        setState({...state, amount: price});
-        setState({...state, amount: 123});
-        setState({...state, type: item.food.category});
-        // setState({...state, amount: price});
-        console.log(item.food.category);
-        orderProject(item);
+        const pack = {Amount:price,Type:item.food.label}
+        orderProject(pack);
     }
     item = item.item;
     var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
-    const [state, setState] = React.useState({ amaount: "", address: "",phone:"",emailid:"",type:"" });
+    var [state, setState] = React.useState({ amount: "", address: "",phone:"",emailid:"",type:"" });
      
     if(item.food.image)
   return (

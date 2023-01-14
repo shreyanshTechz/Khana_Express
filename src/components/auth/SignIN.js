@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom'
 
 export class SignIN extends Component {
     state = {
-      email:'',password:''
+      email:'',password:'',
 
     }
     handleChange = (e) =>{

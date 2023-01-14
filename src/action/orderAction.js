@@ -1,4 +1,5 @@
 export const orderProject =(project)=>{
+    // console.log(project);
     return(dispatch,getState,{getFirebase,getFirestore})=>{
 
         const firestore = getFirestore();
