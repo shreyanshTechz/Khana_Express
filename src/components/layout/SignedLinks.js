@@ -3,6 +3,13 @@ import {NavLink} from 'react-router-dom'
 import { connect, Connect } from 'react-redux'
 import { signOut } from '../../action/authSctions'
 import { stringify } from 'json5';
+import {Link} from 'react-router-dom'
+// import SignedLinks from './SignedLinks'
+import {compose} from 'redux'
+// import { connect } from 'react-redux'
+// import { connect, Connect } from 'react-redux'
+import SignedOutLinks from './SignedOutLinks'
+import { firestoreConnect } from 'react-redux-firebase'
 class SignedLinks extends Component {
   
 
@@ -17,11 +24,12 @@ class SignedLinks extends Component {
     // }
     const {data} = this.props;
     const {people} = data;
-    // const user = data.people.filter(item => item.id===data.auth.uid)[0]
+    console.log(data);
+    const user = (data.people!==undefined)? data.people.filter(item => item.id===data.auth.uid)[0]:"";
     // const name = user.firstName[0] + user.firstName[1];
-    // console.log(auth);
-    const user = people.filter(item => item.id===data.auth.uid);
-    const name = user[0].firstName[0] + user[0].firstName[1];
+    console.log(user);
+    // const user = people.filter(item => item.id===data.auth.uid);
+    const name = (data.people!==undefined)? user.firstName[0] + user.firstName[1]:"";
     return (
       <div>
         <ul className="right">
@@ -36,10 +44,22 @@ class SignedLinks extends Component {
     )
   }
 }
+
+
+const mapStateToprops = (state)=>{
+  return{
+    people:state.firestore.ordered.myprofile,
+    auth:state.firebase.auth
+  }
+}
 const mapDispatchToprops = (dispatch)=>{
   return{
+    people:dispatch.firestore.ordered.myprofile,
     signOut:()=>dispatch(signOut())
   }
 }
 
-export default connect(null,mapDispatchToprops)(SignedLinks)
+export default compose(
+  connect(mapDispatchToprops),firestoreConnect([{collection:'myprofile'}])
+)(SignedLinks)
+// export default connect(null,mapDispatchToprops)(SignedLinks)

@@ -7,9 +7,9 @@ import { connect, Connect } from 'react-redux'
 import SignedOutLinks from './SignedOutLinks'
 import { firestoreConnect } from 'react-redux-firebase'
 const Navbar = (props)=> {
-    const {auth,people} = props;
+    const {auth} = props;
     
-    console.log(people);
+    // console.log(people);
     const links = auth.uid?<SignedLinks data={props}/>:<SignedOutLinks/>
     return (
       <div>
