@@ -22,9 +22,15 @@ export default class ProjectList extends Component {
       console.log(curr_amt);
       document.getElementById('amount').innerHTML = "Amount : ₹" + curr_amt;
       const db = firebase.firestore();
+<<<<<<< HEAD
       // const ids = this.props.auth.uid;
       console.log(this.props);
       // db.collection("myprofile").doc(ids).update({amount: curr_amt});
+=======
+      const ids = this.props.project.user.uid;
+      console.log(ids);
+      db.collection("myprofile").doc(ids).update({amount: curr_amt});
+>>>>>>> 9ebe0e595c9d4da0fef3a445050a1befdabb54dc
       // this.props.orderProject(this.props.item);
   }
   handleClickU = (e)=>{

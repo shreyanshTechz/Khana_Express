@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/shreyanshTechz/Khana_Express",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -12,6 +13,10 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
     "firebase": "^9.9.4",
+<<<<<<< HEAD
+=======
+    "gh-pages": "^4.0.0",
+>>>>>>> 9ebe0e595c9d4da0fef3a445050a1befdabb54dc
     "httpclient": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,6 +31,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
