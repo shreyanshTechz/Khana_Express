@@ -5,7 +5,6 @@ import { orderProject } from '../../action/orderAction'
 import { Navigate } from 'react-router-dom'
 import firebase from '../../reducers/fbconfig/fbConfig'
 export class CreateProject extends Component {
-<<<<<<< HEAD
     //  db = getDatabase();
     
     // handleClickU  =(e)=>{
@@ -23,8 +22,6 @@ export class CreateProject extends Component {
         
     //   });
     // }
-=======
->>>>>>> 9ebe0e595c9d4da0fef3a445050a1befdabb54dc
     handleClick = (e) =>{
         e.preventDefault();
         const object = {uid:this.props.auth.uid};

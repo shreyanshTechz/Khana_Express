@@ -4,7 +4,7 @@ const initState =  {
         
         {id:'2',title:'Hey Shh',content:'rjkgnr renfmref fnrejk f'},
         
-        {id:'3',title:'Hey Shreya',content:'rjmvlkdfkgnr renfmref fnrejk f'},
+        {id:'3',title:'Hey Shreya',content:'rjkgnr renfmref fnrejk f'},
     ]
 }
 const projectReducer = (state = initState,action) => {
