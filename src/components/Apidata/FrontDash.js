@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
-import Items from '../layout/Items';
+// import React, { useState, useEffect } from 'react'
+// import axios from 'axios';
+// import Items from '../layout/Items';
 import Api from './Api';
 import ImgMediaCard from '../projects/SlideFront'
 function FrontDash(props) {

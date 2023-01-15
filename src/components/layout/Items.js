@@ -1,20 +1,20 @@
 import React from 'react'
 // import '@splidejs/splide/css';
 // import { createProject} from '../../action/projectAction'
-import { orderProject } from '../../action/orderAction';
+// import { orderProject } from '../../action/orderAction';
 export default function Items(item) {
     // console.log(item);
     
     function create(item) {
-        var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
-        const pack = {Amount:price,Type:item.food.label}
+        // var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
+        // const pack = {Amount:price,Type:item.food.label}
         // alert("H")
         
         // orderProject(pack);
     }
     item = item.item;
     var price  = JSON.stringify(item.food.nutrients.CHOCDF).split('.')[0];
-    var [state, setState] = React.useState({ amount: "", address: "",phone:"",emailid:"",type:"" });
+    // var [state, setState] = React.useState({ amount: "", address: "",phone:"",emailid:"",type:"" });
      
     if(item.food.image)
   return (
@@ -23,9 +23,9 @@ export default function Items(item) {
         <div class="col s2">
                           <div class="card">
                             <div class="card-image">
-                              <img src={item.food.image}/>
+                              <img src={item.food.image} alt=""/>
                               {/* <span class="card-title" style={{fontWeight:"800"}}>{item.food.label}</span> */}
-                              <a class="btn-floating halfway-fab waves-effect waves-light red" onClick={() => {create(item)}}><i class="material-icons">add</i></a>
+                              <span class="btn-floating halfway-fab waves-effect waves-light red" onClick={() => {create(item)}}><i class="material-icons">add</i></span>
                             </div>
                             <div class="card-content">
                               <p style={{fontWeight:"800"}}>{item.food.label}</p>

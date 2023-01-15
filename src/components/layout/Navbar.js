@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import SignedLinks from './SignedLinks'
 import {compose} from 'redux'
 // import { connect } from 'react-redux'
-import { connect, Connect } from 'react-redux'
+import { connect} from 'react-redux'
 import SignedOutLinks from './SignedOutLinks'
 import { firestoreConnect } from 'react-redux-firebase'
 const Navbar = (props)=> {

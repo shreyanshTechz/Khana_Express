@@ -4,7 +4,7 @@ import firebase from 'firebase/compat/app'; import 'firebase/compat/auth'; impor
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-import { getDatabase, ref, set } from "firebase/database";
+// import { getDatabase, ref, set } from "firebase/database";
 import { getFirestore } from 'redux-firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyBYa7zFClKnqRG-cjvDp2eD5FzNrr6Caec",

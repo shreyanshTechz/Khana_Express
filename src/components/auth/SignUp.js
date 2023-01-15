@@ -25,7 +25,7 @@ export class SignUp extends Component {
     }
   render() {
     console.log(this.props);
-    const {auth,authError} = this.props;
+    const {auth} = this.props;
     if(auth.uid) return <Navigate to='/'/>
     return (
 

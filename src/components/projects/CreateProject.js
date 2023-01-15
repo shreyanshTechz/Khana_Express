@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { connect, Connect } from 'react-redux'
+import { connect} from 'react-redux'
 import { createProject} from '../../action/projectAction'
-import { Navigate } from 'react-router-dom'
+// import { Navigate } from 'react-router-dom'
 export class CreateProject extends Component {
     state = {
         name:'',phone:'',address:'',email:'',amount:'',

@@ -11,8 +11,8 @@ import {Navigate} from 'react-router-dom'
 
 class Dashboard extends Component {
   render() {
-    const {projects,auth,items} = this.props;
-    const project  =projects.filter(item => item.user.email===auth.email);
+    const {projects,auth} = this.props;
+    const project  = (projects)?projects.filter(item => item.user.email===auth.email):"";
     if(!auth.uid) return <Navigate to='/signin'/>
     console.log(this.props);
     return (

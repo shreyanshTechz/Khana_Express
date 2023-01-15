@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect, Connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { signIn } from '../../action/authSctions'
 import { Navigate } from 'react-router-dom'
 

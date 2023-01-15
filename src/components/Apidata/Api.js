@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import Items from '../layout/Items';
-import ImgMediaCard from '../projects/SlideFront'
+// import Items from '../layout/Items';
+// import ImgMediaCard from '../projects/SlideFront'
 import CreateOrders from '../projects/CreateOrders';
 // import Itemz from '../layout/Itemz'
 function Api(props) {
@@ -42,7 +42,7 @@ function Api(props) {
 
 		// Call the function
 		loadPost();
-	}, []);
+	},[props.item]);
 	return (
 		<>
         
