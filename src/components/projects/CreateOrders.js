@@ -5,23 +5,6 @@ import { orderProject } from '../../action/orderAction'
 import { Navigate } from 'react-router-dom'
 import firebase from '../../reducers/fbconfig/fbConfig'
 export class CreateProject extends Component {
-    //  db = getDatabase();
-    
-    // handleClickU  =(e)=>{
-    //   const db = firebase.firestore();
-    //   const ids = this.props.auth.uid;
-    //   // console.log(db.collection("Users").doc(ids));
-    //   // db.collection("Users").doc(ids).id = "Shreyansh";
-    //   // var id = db.collection("users").document().getId();
-    //   // console.log(db.collection("Users").listDocuments());
-    //   db.collection("myprofile").doc(ids).update({amount: "100"})
-    //   .then(() => {
-    //     console.log("success");
-    //   })
-    //   .catch((error) => {
-        
-    //   });
-    // }
     handleClick = (e) =>{
         e.preventDefault();
         const object = {uid:this.props.auth.uid};
