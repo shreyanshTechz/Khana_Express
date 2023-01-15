@@ -12,15 +12,15 @@ import {Navigate} from 'react-router-dom'
 class Dashboard extends Component {
   render() {
     const {projects,auth,items} = this.props;
-    const project  = (projects!==undefined)?( projects.filter(item => item.user.email===auth.email) ):"";
+    const project  = (projects & auth)?( projects.filter(item => item.user.email===auth.email) ):"";
     // if(project!=="") project.uid = auth.uid
     if(!auth.uid) return <Navigate to='/signin'/>
-    console.log(project);
+    console.log(this.props);
     return (
       <div className="dashboard container">
         <div className="row">
             <div className="col">
-                <ProjectList projects={project}/>
+                <ProjectList projects={projects}/>
                 <br></br>
                 <ImgMediaCard  text="burger"/>
              

@@ -37,7 +37,8 @@ export class CreateProject extends Component {
         db.collection("myprofile").doc(ids).update({amount: curr_amt});
         this.props.item.food.quantity = (this.props.item.food.quantity!==undefined)?this.props.item.food.quantity + 1:1;
         console.log(db.collection("myprofile").doc(ids).collection("orders").doc(this.props.item.food.foodId).set(this.props.item));
-    }
+        this.props.orderProject(this.props.item);
+      }
   render() {
     
     const {auth} = this.props;
