@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
-import Notification from './Notification'
-import ProjectList from '../projects/ProjectList'
+
 import {compose} from 'redux'
 import { connect } from 'react-redux'
+import ImgMediaCard from '../projects/SlideFront'
 import { firestoreConnect } from 'react-redux-firebase'
+import ProjectList from '../projects/ProjectList'
 import {Navigate} from 'react-router-dom'
+
+
+
 class Dashboard extends Component {
   render() {
-    const {projects,auth} = this.props;
+    const {projects,auth,items} = this.props;
+    const project  = (projects & auth)?( projects.filter(item => item.user.email===auth.email) ):"";
+    // if(project!=="") project.uid = auth.uid
     if(!auth.uid) return <Navigate to='/signin'/>
+    console.log(this.props);
     return (
       <div className="dashboard container">
         <div className="row">
             <div className="col">
                 <ProjectList projects={projects}/>
+                <br></br>
+                <ImgMediaCard  text="burger"/>
+             
             </div>
             <div className="col offset-m1"></div>
             {/* <Notification/> */}
@@ -24,12 +34,13 @@ class Dashboard extends Component {
 }
 const mapStateToprops = (state) =>{
   // console.log(state)
+  
   return{
-    projects:state.firestore.ordered.projects,
+    projects:state.firestore.ordered.Orders,
     auth:state.firebase.auth
   }
 }
 
 export default compose(
-  connect(mapStateToprops),firestoreConnect([{collection:'projects'}])
+  connect(mapStateToprops),firestoreConnect([{collection:'Orders'}])
 )(Dashboard)

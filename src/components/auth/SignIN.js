@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect, Connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { signIn } from '../../action/authSctions'
 import { Navigate } from 'react-router-dom'
 
@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom'
 
 export class SignIN extends Component {
     state = {
-      email:'',password:''
+      email:'',password:'',
 
     }
     handleChange = (e) =>{
@@ -22,6 +22,7 @@ export class SignIN extends Component {
         // return <Navigate to='/signUp'/>
     }
   render() {
+    console.log("djsvnfds");
     const {authError} = this.props;
     
     const {auth} = this.props;

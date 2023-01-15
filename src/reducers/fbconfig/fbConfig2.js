@@ -5,7 +5,7 @@ import firebase from 'firebase/compat/app'; import 'firebase/compat/auth'; impor
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 // import { getDatabase, ref, set } from "firebase/database";
-// import { getFirestore } from 'redux-firestore';
+import { getFirestore } from 'redux-firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyBYa7zFClKnqRG-cjvDp2eD5FzNrr6Caec",
   authDomain: "blog-ac849.firebaseapp.com",
@@ -16,10 +16,10 @@ const firebaseConfig = {
   measurementId: "G-NBTJKVVG0G"
 };
 
-firebase.initializeApp(firebaseConfig);
-// const db = getFirestore(app);
+const app =firebase.initializeApp(firebaseConfig);
+const db = getFirestore(app);
 // const auth =getAuth
-// console.log(data);
+console.log(db);
 // firebase.firestore().setting({timestampsInSnapshots : true});
 
-export default firebase;
+export default db;
