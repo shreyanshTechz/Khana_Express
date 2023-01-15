@@ -11,7 +11,7 @@ import CreateProject from './components/projects/CreateProject'
 // import Api from './components/Apidata/Api'
 // import axios from 'axios';
 import FrontDash from './components/Apidata/FrontDash'
-
+// import $http from '@/services/HttpClient';
 // import { getDatabase } from "firebase/database";
 // import Google from './components/auth/Google'
 export default class App extends Component {
@@ -53,7 +53,7 @@ export default class App extends Component {
             {/* <Route path='/project/:id' element={<ProjectDetails />} /> */}
             <Route path='/Signin' element={<SignIN />} />
             <Route path='/Signup' element={<SignUp />} />
-            <Route path='/' element={<FrontDash item={['pizza','burger','chocolate','fruits','cake','biscuits','milk','butter','oil','namkeen','syrup']}/>} />
+            <Route path='/' element={<FrontDash item={['pizza','burger','chocolate','fruits','cake','biscuits','milk','butter','oil','namkeen','candy','jeera','Nuts','Haldi','sweets','honey','noodles','suji','sugar','popcorn','chips']}/>} />
             {/* <Route path='/details' element={<Project />} /> */}
             <Route path='/create' element={<CreateProject />} />
             {/* <Route path='/google' element={<Google/>}/> */}

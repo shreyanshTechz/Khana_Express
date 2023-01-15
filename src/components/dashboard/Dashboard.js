@@ -13,7 +13,7 @@ class Dashboard extends Component {
   render() {
     const {projects,auth,items} = this.props;
     const project  = (projects!==undefined)?( projects.filter(item => item.user.email===auth.email) ):"";
-    if(project!=="") project.uid = auth.uid
+    // if(project!=="") project.uid = auth.uid
     if(!auth.uid) return <Navigate to='/signin'/>
     console.log(project);
     return (
