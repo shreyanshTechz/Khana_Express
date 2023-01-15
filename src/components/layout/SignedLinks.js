@@ -10,32 +10,24 @@ import {compose} from 'redux'
 // import { connect, Connect } from 'react-redux'
 // import SignedOutLinks from './SignedOutLinks'
 import { firestoreConnect } from 'react-redux-firebase'
+import Logout from './Logout'
 class SignedLinks extends Component {
   
 
   render() {
-    // event.preventDefault()
-    // const uid = this.props.data.auth.uid;
-    // console.log(this.props);
-    // var person;
-    // for (let index = 0; index < this.props.data.people.length; index++) {
-    //   const element = this.props.data.people[index].item;
-    //   if(element===uid) person=this.props.data.people[index];
-    // }
+   
     const {data} = this.props;
-    // const {people} = data;
-    // console.log(data);
+   
     const user = (data.people!==undefined)? data.people.filter(item => item.id===data.auth.uid)[0]:"";
-    // // const name = user.firstName[0] + user.firstName[1];
-    // console.log(user);
-    // const user = people.filter(item => item.id===data.auth.uid);
+   
     const name = (data.people!==undefined)? user.firstName[0] + user.firstName[1]:"";
+    console.log(this.props);
     return (
       <div>
         <ul className="right">
             <li id='amount'>Amount :  ₹ {user.amount}</li>
             <li><NavLink to='/cart'><img alt='' src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/null/external-shopping-cart-interface-kiranshastry-gradient-kiranshastry.png"/></NavLink></li>
-            <li><span  onClick={this.props.data.auth.signOut}><img alt='' src="https://img.icons8.com/fluency/48/null/exit.png"/></span></li>
+            <Logout/>
             <li><NavLink to='/'></NavLink></li>
             <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{name}</NavLink></li>
             <li>{user.firstName}</li>
@@ -48,7 +40,7 @@ class SignedLinks extends Component {
 const mapDispatchToprops = (dispatch)=>{
   return{
     people:dispatch.firestore.ordered.myprofile,
-    signOut:()=>dispatch(signOut())
+    // signOut:()=>dispatch(signOut())
   }
 }
 

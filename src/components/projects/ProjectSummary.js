@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 // import ProjectDetails from './ProjectDetails';
 // import {useLocation} from 'react-router-dom';
 // import firebase from 'firebase/compat';
-// import firebase from '../../reducers/fbconfig/fbConfig';
+import firebase from '../../reducers/fbconfig/fbConfig';
 export default class ProjectList extends Component {
 
   handleClick = (e)=>{
@@ -20,9 +20,10 @@ export default class ProjectList extends Component {
       alert(this.props.project.food.label +  " added to Cart");
       const curr_amt =Number(document.getElementById('amount').innerHTML.split('₹')[1]) + Number(price);
       console.log(curr_amt);
-      // document.getElementById('amount').innerHTML = "Amount : ₹" + curr_amt;
-      // const db = firebase.firestore();
+      document.getElementById('amount').innerHTML = "Amount : ₹" + curr_amt;
+      const db = firebase.firestore();
       // const ids = this.props.auth.uid;
+      console.log(this.props);
       // db.collection("myprofile").doc(ids).update({amount: curr_amt});
       // this.props.orderProject(this.props.item);
   }

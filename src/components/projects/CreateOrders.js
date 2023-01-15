@@ -24,7 +24,7 @@ export class CreateProject extends Component {
     // }
     handleClick = (e) =>{
         e.preventDefault();
-        const object = {email:this.props.auth.email};
+        const object = {uid:this.props.auth.uid};
         this.props.item.user = object;
         console.log(this.props.item.food.nutrients.CHOCDF);
         var price  = JSON.stringify(this.props.item.food.nutrients.CHOCDF).split('.')[0];
@@ -35,7 +35,8 @@ export class CreateProject extends Component {
         const db = firebase.firestore();
         const ids = this.props.auth.uid;
         db.collection("myprofile").doc(ids).update({amount: curr_amt});
-        this.props.orderProject(this.props.item);
+        this.props.item.food.quantity = (this.props.item.food.quantity!==undefined)?this.props.item.food.quantity + 1:1;
+        console.log(db.collection("myprofile").doc(ids).collection("orders").doc(this.props.item.food.foodId).set(this.props.item));
     }
   render() {
     

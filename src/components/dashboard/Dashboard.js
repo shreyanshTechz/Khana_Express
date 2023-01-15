@@ -11,10 +11,11 @@ import {Navigate} from 'react-router-dom'
 
 class Dashboard extends Component {
   render() {
-    const {projects,auth} = this.props;
-    const project  = (projects)?projects.filter(item => item.user.email===auth.email):"";
+    const {projects,auth,items} = this.props;
+    const project  = (projects!==undefined)?( projects.filter(item => item.user.email===auth.email) ):"";
+    if(project!=="") project.uid = auth.uid
     if(!auth.uid) return <Navigate to='/signin'/>
-    console.log(this.props);
+    console.log(project);
     return (
       <div className="dashboard container">
         <div className="row">
